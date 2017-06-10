@@ -11,7 +11,11 @@
 |
 */
 Route::get('home', 'HomeController@index');//Для відображення результата після логування
-
+Route::get('/clear-cache', function() {
+	$exitCode = Artisan::call('cache:clear');
+	return '<h1>Cache facade value cleared</h1>';
+	// return what you want
+});
 /*Auth group routes*/
 Route::controllers([
 	//'auth' => 'Auth\AuthController',

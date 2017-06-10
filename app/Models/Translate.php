@@ -7,17 +7,17 @@ class Translate extends Model {
 
     public function getTranslate($field, $lang = null){
         $pieces = explode("@|;", $this->$field);
-        if(count($pieces) < 2 )
+        if(count($pieces) < 3 )
             return $this->$field;
         if(!$lang){
             $lang = App::getLocale();
         }
-/*        if ($lang == 'ua')
-            $field = $pieces[0];*/
         if ($lang == 'ua')
             $field = $pieces[0];
-        if ($lang == 'en')
+        if ($lang == 'ru')
             $field = $pieces[1];
+        if ($lang == 'en')
+            $field = $pieces[2];
         return $field;
     }
 
@@ -26,17 +26,17 @@ class Translate extends Model {
         $attributes = json_decode($articleArray['attributes'], true);
         if(isset($attributes[$key]) AND $attributes[$key]){
             $pieces = explode("@|;", $attributes[$key]);
-            if(count($pieces) < 2 )
+            if(count($pieces) < 3 )
                 return $attributes[$key];
             if(!$lang){
                 $lang = App::getLocale();
             }
-        /*  if ($lang == 'ua')
-                $field = $pieces[0];*/
             if ($lang == 'ua')
                 $field = $pieces[0];
-            if ($lang == 'en')
+            if ($lang == 'ru')
                 $field = $pieces[1];
+            if ($lang == 'en')
+                $field = $pieces[2];
             return $field;
         }
         return false;
