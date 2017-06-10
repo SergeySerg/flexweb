@@ -18,7 +18,7 @@ class AuthMiddleware {
 			return $next($request);
 		}
 		else{
-			return redirect('auth.login');
+			return redirect('adminpae3W.login');
 		}
 
 

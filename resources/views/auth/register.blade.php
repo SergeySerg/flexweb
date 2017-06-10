@@ -83,7 +83,7 @@
 			<div class="space-6"></div>
 			<p> {{ trans('passwords.put_data') }} </p>
 
-			<form role="form" method="POST" action="{{ url('/auth/register') }}" />
+			<form role="form" method="POST" action="{{ url('/adminpae3W/register') }}" />
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<fieldset>
 				<label>

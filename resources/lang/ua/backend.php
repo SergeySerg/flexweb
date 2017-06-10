@@ -96,5 +96,11 @@ return [
     'files' => 'Файл',
     'save' => 'Зберегти',
     /*/Category edit*/
+    /* page home*/
+    'welcome_home' => 'Вітаємо',
+    'registration' => 'Ви успішно пройшли реєстрацію!',
+    /*/page home*/
+
+
 
 ];

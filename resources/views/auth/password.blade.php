@@ -98,7 +98,7 @@
 			</div><!--/widget-main-->
 
 			<div class="toolbar center">
-				<a href="{{ url('/auth/login') }}"  class="back-to-login-link">
+				<a href="{{ url('/adminpae3W/login') }}"  class="back-to-login-link">
 					{{ trans('passwords.back_login') }}
 					<i class="icon-arrow-right"></i>
 				</a>

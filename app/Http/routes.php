@@ -14,9 +14,17 @@ Route::get('home', 'HomeController@index');//Для відображення р�
 
 /*Auth group routes*/
 Route::controllers([
-	'auth' => 'Auth\AuthController',
+	//'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+Route::get('/register', array('as' => 'signup', 'uses' => 'Auth\AuthController@getRegister'));
+Route::post('/register', array('as' => 'signup', 'uses' => 'Auth\AuthController@postRegister'));
+Route::get('adminpae3W/login', array('as' => 'login', 'uses' => 'Auth\AuthController@getLogin'));
+Route::post('adminpae3W/login', array('as' => 'login', 'uses' => 'Auth\AuthController@postLogin'));
+Route::get('adminpae3W/logout', array('as' => 'logout', 'uses' => 'Auth\AuthController@getLogout'));
+/*Route::get('/forgot', array('as' => 'forgot', 'uses' => 'Auth\AuthController@getLogin'));
+Route::post('/forgot', array('as' => 'forgot', 'uses' => 'Auth\AuthController@postLogin'));*/
+
 /*/Auth group routes*/
 
 Route::get('/', 'Frontend\HomeController@index');//Перенаправлення на адресу з локалю
