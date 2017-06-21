@@ -5,101 +5,30 @@
 {{--@if( count($report) !== 0 AND $categories_data['report']->active == 1)--}}
     <div class="container">
         <div class="row">
+            @if( count($slider) !== 0 AND $categories_data['slider']->active == 1)
+                <div class="section-slider">
 
-            <div class="section-slider">
-                <div class="owl-carousel">
-
-                    <div>
-
-                        <div class="col-md-6">
-
-                            <div class="slide_img-wrap center">
-                                <img  class="slide-img" src="/img/slide_design@3x.png" alt="">
+                    <div class="owl-carousel">
+                        @foreach($slider as $slider_item)
+                            <div>
+                                <div class="col-md-6">
+                                    <div class="slide_img-wrap center">
+                                        <img  class="slide-img" src="{{ asset( $slider_item->getAttributeTranslate('Слайд')) }}" alt="{{ $slider_item->getTranslate('title') }}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="slide_description-wrap">
+                                        <div class="slide-name">{{ $slider_item->getTranslate('title') }}</div>
+                                        <div class="slide_main-description">{!! $slider_item->getTranslate('short_description') ? $slider_item->getTranslate('short_description') : " "  !!}</div>
+                                        <div class="slide_description">{!! $slider_item->getTranslate('description') ? $slider_item->getTranslate('description') : " "  !!}</div>
+                                        <button class="order">{{ trans('base.order') }}</button>
+                                    </div>
+                                </div>
                             </div>
-
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <div class="slide_description-wrap">
-                                <div class="slide-name">хостинг</div>
-                                <p class="slide_main-description">DigitalMakers — креативное бюро,
-                                    которое нацелено на создание
-                                    идеального продукта для
-                                    вашего бренда. </p>
-                                <p class="slide_description">Мы работаем над воплощением вашей идеи в жизнь в
-                                    цифровом виде. DigitalMakers — креативное бюро,
-                                    которое нацелено на  создание идеального продукта
-                                    для вашего бренда.  Мы работаем над воплощением
-                                    вашей идеи в жизнь в  цифровом виде.</p>
-                                <button class="order">Замовити</button>
-                            </div>
-
-                        </div>
-
+                        @endforeach
                     </div>
-                    <div>
-
-                        <div class="col-md-6">
-
-                            <div class="slide_img-wrap center">
-                                <img  class="slide-img" src="/img/slide_hosting@3x.png" alt="">
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <div class="slide_description-wrap">
-                                <div class="slide-name">хостинг</div>
-                                <p class="slide_main-description">DigitalMakers — креативное бюро,
-                                    которое нацелено на создание
-                                    идеального продукта для
-                                    вашего бренда. </p>
-                                <p class="slide_description">Мы работаем над воплощением вашей идеи в жизнь в
-                                    цифровом виде. DigitalMakers — креативное бюро,
-                                    которое нацелено на  создание идеального продукта
-                                    для вашего бренда.  Мы работаем над воплощением
-                                    вашей идеи в жизнь в  цифровом виде.</p>
-                                <button class="order">Замовити</button>
-                            </div>
-
-                        </div>
-
-                    </div>
-                    <div>
-
-                        <div class="col-md-6">
-
-                            <div class="slide_img-wrap center">
-                                <img  class="slide-img" src="/img/slide_rekonstruction@3x.png" alt="">
-                            </div>
-
-                        </div>
-
-                        <div class="col-md-6">
-
-                            <div class="slide_description-wrap">
-                                <div class="slide-name">хостинг</div>
-                                <p class="slide_main-description">DigitalMakers — креативное бюро,
-                                    которое нацелено на создание
-                                    идеального продукта для
-                                    вашего бренда. </p>
-                                <p class="slide_description">Мы работаем над воплощением вашей идеи в жизнь в
-                                    цифровом виде. DigitalMakers — креативное бюро,
-                                    которое нацелено на  создание идеального продукта
-                                    для вашего бренда.  Мы работаем над воплощением
-                                    вашей идеи в жизнь в  цифровом виде.</p>
-                                <button class="order">Замовити</button>
-                            </div>
-
-                        </div>
-
-                    </div>
-
                 </div>
-            </div>
-
+            @endif
         </div>
     </div>
 
@@ -119,66 +48,25 @@
                     </ul>
                 </div>
 
-                <div class="col-md-12">
-                    <div class="all-items_wrap"><a href="#" class="all-items  all-services retina">всі послуги</a></div>
-                    <h2 class="section_title section_title__services retina">Послуги</h2>
-                    <h3 class="section_description">Мы уверенны, что сотрудничество со студией «Dream-line»  </h3>
-                </div>
+                @if( count($services) !== 0 AND $categories_data['services']->active == 1)
 
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <a href="#" class="services_item">
-                        <img class="services_item__img" src="/img/imgForSprite/makeup@3x.png" alt="">
-                        <h4 class="services_item__title">Верстка</h4>
-                        <p class="services_item__description">Мы уверенны, что сотрудничество со студией «Dream-line» - это 100% успех Вашего бизнеса.
-                        </p>
-                    </a>
-                </div>
+                    <div class="col-md-12">
+                        <div class="all-items_wrap"><a href="#" class="all-items  all-services retina">{{ trans('base.all_services') }}</a></div>
+                        <h2 class="section_title section_title__services retina">{{ $categories_data['services']->getTranslate('title') }}</h2>
+                        <h3 class="section_description">{{$categories_data['services']->getTranslate('short_description')}}</h3>
+                    </div>
+                    @foreach($services as $service)
+                        <div class="col-xs-12 col-sm-6 col-md-4">
+                            <a href="#" class="services_item">
+                                <img class="services_item__img" src="{{ asset( $service->getAttributeTranslate('Картинка послуги')) }}" alt="{{ $service->getTranslate('title') }}">
+                                <h4 class="services_item__title">{{ $service->getTranslate('title') }}</h4>
+                                <div class="services_item__description">{!! $service->getTranslate('short_description') !!}
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
 
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <a href="#" class="services_item">
-                        <img class="services_item__img" src="/img/imgForSprite/programming@3x.png" alt="">
-                        <h4 class="services_item__title">Програмування</h4>
-                        <p class="services_item__description">Мы уверенны, что сотрудничество со студией «Dream-line» - это 100% успех Вашего бизнеса.
-                        </p>
-                    </a>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <a href="#" class="services_item">
-                        <img class="services_item__img" src="/img/imgForSprite/hosting@3x.png" alt="">
-                        <h4 class="services_item__title">Хостинг</h4>
-                        <p class="services_item__description">Мы уверенны, что сотрудничество со студией «Dream-line» - это 100% успех Вашего бизнеса.
-                        </p>
-                    </a>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <a href="#" class="services_item">
-                        <img class="services_item__img" src="/img/imgForSprite/design@3x.png" alt="">
-                        <h4 class="services_item__title">Веб-дизайн</h4>
-                        <p class="services_item__description">Мы уверенны, что сотрудничество со студией «Dream-line» - это 100% успех Вашего бизнеса.
-                        </p>
-                    </a>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <a href="#" class="services_item">
-                        <img class="services_item__img" src="/img/imgForSprite/seo@3x.png" alt="">
-                        <h4 class="services_item__title">Просування</h4>
-                        <p class="services_item__description">Мы уверенны, что сотрудничество со студией «Dream-line» - это 100% успех Вашего бизнеса.
-                        </p>
-                    </a>
-                </div>
-
-                <div class="col-xs-12 col-sm-6 col-md-4">
-                    <a href="#" class="services_item">
-                        <img class="services_item__img" src="/img/imgForSprite/rekonstruction@3x.png" alt="">
-                        <h4 class="services_item__title">Реконструкція</h4>
-                        <p class="services_item__description">Мы уверенны, что сотрудничество со студией «Dream-line» - это 100% успех Вашего бизнеса.
-                        </p>
-                    </a>
-                </div>
-
+                @endif
             </div>
         </div>
 

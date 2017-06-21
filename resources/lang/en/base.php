@@ -14,9 +14,11 @@ return [
 	*/
 	'main' => 'Main',
 	'services' => 'Services',
+	'all_services' => 'all services',
 	'news' => 'News',
 	'portfolio' => 'Portfolio',
 	'names' => 'site creation studio',
+	'order' => 'Order',
 	'company' => 'About us',
 	'project' => 'Projects',
 	'subject' => 'Subjects',
