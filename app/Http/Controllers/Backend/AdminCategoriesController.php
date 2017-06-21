@@ -18,6 +18,7 @@ use Illuminate\Support\MessageBag;
 use Storage;
 use Image;
 use Validator;
+use Debugbar;
 
 
 class AdminCategoriesController extends Controller {
@@ -147,12 +148,15 @@ class AdminCategoriesController extends Controller {
 
 	public function edit($type = null)
 	{
+		//dd($type);
+		Debugbar::info($type);
 		$langs = Lang::all();
-		$admin_category = Category::where("link","=","$type")->first();
-
+		//dd($langs);
+		$admin_category = Category::where("link","$type")->first();
+		//dd($admin_category);
 		//Var article_parent
-		$category_parent = $admin_category['parent_id'];
-
+		//$category_parent = $admin_category['parent_id'];
+//dd($category_parent);
 		//create folder with id
 		Storage::makeDirectory('upload/categories/' . $admin_category->id, '0777', true, true);
 
@@ -161,26 +165,12 @@ class AdminCategoriesController extends Controller {
 
 		//Decode attributes from articles DB
 		$attributes_fields = $fields->attributes;
+		Debugbar::addMeasure('now', LARAVEL_START, microtime(true));
+		//dd('все ок');
 		return view('backend.categories.edit')
-			->with(compact('langs','admin_category','type','attributes_fields','category_parent'))
+			->with(compact('langs','admin_category','type','attributes_fields'))
 			->with(['action_method' => 'put']);
 
-		/*return view('backend.categories.edit', [
-			'admin_category' => $admin_category,
-			'langs' => $langs,
-			'type' => $type,
-			'action_method' => 'put',
-			'attributes_fields' => $attributes_fields,
-			'article_parent' => $article_parent
-		]);*/
-        /*[
-			'admin_category' => $admin_category,
-			'langs' => $langs,
-			'type' => $type,
-			'action_method' => 'put',
-			'attributes_fields' => $attributes_fields,
-			'article_parent' => $article_parent
-		]);*/
 	}
 
 	/* Update the Category in storage.(@param  int  $id,@return Response*/

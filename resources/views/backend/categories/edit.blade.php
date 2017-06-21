@@ -69,7 +69,7 @@
 
                     </ul>
 
-                    <div class="tab-content" style="min-height: 160px;">
+                    <div class="tab-content" style="min-height: 165px;">
                         <div id="link3" class="tab-pane in active">
                             <div class="control-group">
 {{--
@@ -247,13 +247,6 @@
                     </div>
                 </div>
 
-                {{--<div class="control-group">
-                    <label class="control-label" for="form-field-21">Картинка категорії</label>
-                    <div class="controls">
-                        <input type="file" id="uploadimage" name="img" --}}{{--@if(isset($admin_category)) value='{{$admin_category->link}}'@endif--}}{{--  />
-                    </div>
-                </div>--}}
-
                 <div class="space-12"></div>
 
                 <div class="row-fluid">
@@ -318,6 +311,7 @@
 
                             @endforeach
 
+
                             @if(isset($admin_category))
                                 <h4 class="header green clearfix">
                                     Gallery
@@ -345,50 +339,7 @@
                     </div>
                 </div>
                 <div class="space-4"></div>
-               {{-- <div class="control-group">
-                    <label class="control-label">Статус</label>
-                    <div class="controls">
-                        <div class="row-fluid">
-                            <div class="span3">
-                                <label>
-                                    <input name='active' type='hidden' value='0'>
-                                    <input name='active' class="ace-switch ace-switch-6" type="checkbox" value=1 @if(isset($admin_category) AND $admin_category->active) checked="checked" @endif />
-                                    <span class="lbl"></span>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="form-field-2">Пріоритет</label>
 
-                    <div class="controls">
-                        <input type="number" id="form-field-2" name="priority" @if(isset($admin_category)) value='{{$admin_category->priority}}' @endif  />
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="id-date-picker-1">Дата</label>
-                    <div class="controls">
-                        <div class="row-fluid input-append">
-                            <input class="span2 date-picker" name="date" id="id-date-picker-1" type="text" data-date-format="dd-mm-yyyy" @if(isset($admin_category)) value='{{date('d-m-Y',strtotime($admin_category->date))}}' @endif/>
-                                    <span class="add-on">
-                                        <i class="icon-calendar"></i>
-                                   </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <label class="control-label" for="form-field-select-1">Відношення до записів</label>
-                    <div class="controls">
-                        <select name="article_parent" id="form-field-select-1">
-                            <option value="">
-                                @foreach($admin_categories as $category_item)
-                                    </option><option value="{{ $category_item->id}}" @if(isset($article_parent) && ($article_parent == $category_item->id)) selected="selected" @endif>{{ $category_item->getTranslate('title') }}
-                                @endforeach
-                            </option>
-                        </select>
-                    </div>
-                </div>--}}
                 <div class="hr hr-18 dotted hr-double"></div>
                 <h4 class="pink">
                     <i class="icon-hand-right icon-animated-hand-pointer blue"></i>

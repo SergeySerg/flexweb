@@ -67,16 +67,6 @@
     <![endif]-->
 </head>
 <body>
-<!--<div class="admin-header">Админ панель</div>
-    <div class="categoty-admin">
-        <h3>Категории админки</h3>
-        <ul class="list-admin">
-            <li><a href="/adminpae3W/articles/rooms">Комнаты</a></li>
-            <li><a href="/adminpae3W/articles/services">Услуги</a></li>
-            <li><a href="/adminpae3W/articles/events">События</a></li>
-        </ul>
-    </div>-->
-
 <div class="navbar hidden-print">
     <div class="navbar-inner">
         <div class="container-fluid">

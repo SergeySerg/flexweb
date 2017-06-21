@@ -37,9 +37,9 @@ class FrontendInit {
 
 		//share type
 		$type = $request->type;
-		/*if(is_null($request->type)){
+		if(is_null($request->type)){
 			$type = 'main';
-		}*/
+		}
 
 		//get all Category
 		$categories = Category::all();

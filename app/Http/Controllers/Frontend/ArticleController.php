@@ -31,7 +31,7 @@ class ArticleController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function index($lang, $type = 'company')
+	public function index($lang, $type = 'main')
 	{
 //dd($type);
 		/*$static_page = Category::where('link', $type)

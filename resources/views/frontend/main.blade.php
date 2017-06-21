@@ -2,159 +2,445 @@
 
 @section('content')
 
-@if( count($report) !== 0 AND $categories_data['report']->active == 1)
-    <div class="advertising-section">
+{{--@if( count($report) !== 0 AND $categories_data['report']->active == 1)--}}
+    <div class="container">
+        <div class="row">
+
+            <div class="section-slider">
+                <div class="owl-carousel">
+
+                    <div>
+
+                        <div class="col-md-6">
+
+                            <div class="slide_img-wrap center">
+                                <img  class="slide-img" src="/img/slide_design@3x.png" alt="">
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="slide_description-wrap">
+                                <div class="slide-name">хостинг</div>
+                                <p class="slide_main-description">DigitalMakers — креативное бюро,
+                                    которое нацелено на создание
+                                    идеального продукта для
+                                    вашего бренда. </p>
+                                <p class="slide_description">Мы работаем над воплощением вашей идеи в жизнь в
+                                    цифровом виде. DigitalMakers — креативное бюро,
+                                    которое нацелено на  создание идеального продукта
+                                    для вашего бренда.  Мы работаем над воплощением
+                                    вашей идеи в жизнь в  цифровом виде.</p>
+                                <button class="order">Замовити</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div>
+
+                        <div class="col-md-6">
+
+                            <div class="slide_img-wrap center">
+                                <img  class="slide-img" src="/img/slide_hosting@3x.png" alt="">
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="slide_description-wrap">
+                                <div class="slide-name">хостинг</div>
+                                <p class="slide_main-description">DigitalMakers — креативное бюро,
+                                    которое нацелено на создание
+                                    идеального продукта для
+                                    вашего бренда. </p>
+                                <p class="slide_description">Мы работаем над воплощением вашей идеи в жизнь в
+                                    цифровом виде. DigitalMakers — креативное бюро,
+                                    которое нацелено на  создание идеального продукта
+                                    для вашего бренда.  Мы работаем над воплощением
+                                    вашей идеи в жизнь в  цифровом виде.</p>
+                                <button class="order">Замовити</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div>
+
+                        <div class="col-md-6">
+
+                            <div class="slide_img-wrap center">
+                                <img  class="slide-img" src="/img/slide_rekonstruction@3x.png" alt="">
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="slide_description-wrap">
+                                <div class="slide-name">хостинг</div>
+                                <p class="slide_main-description">DigitalMakers — креативное бюро,
+                                    которое нацелено на создание
+                                    идеального продукта для
+                                    вашего бренда. </p>
+                                <p class="slide_description">Мы работаем над воплощением вашей идеи в жизнь в
+                                    цифровом виде. DigitalMakers — креативное бюро,
+                                    которое нацелено на  создание идеального продукта
+                                    для вашего бренда.  Мы работаем над воплощением
+                                    вашей идеи в жизнь в  цифровом виде.</p>
+                                <button class="order">Замовити</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <section class="section-slider_bg"></section>
+
+    <div class="section_services">
+
         <div class="container">
             <div class="row">
+
                 <div class="col-md-12">
-                    <ul class="statistic clearfix">
-                        @foreach($report as $report_item)
-                            <li class="col-md-3 statistic-item-wrap">
-                                <div class="statistic-item" style="background-image: url('{{ asset($report_item-> img)}}');">
-                                    <div class="statistic-item_number">{{ $report_item->getAttributeTranslate('Количество') ? $report_item->getAttributeTranslate('Количество') : '' }}</div>
-                                    <div class="statistic-item_subtitle">{{ $report_item->getTranslate('title') }}</div>
-                                    <div class="statistic-item_subscribe">{!! $report_item->getTranslate('short_description') !!}</div>
-                                </div>
-                            </li>
-                        @endforeach
+                    <ul class="soc">
+                        <li class="soc_item"><a href="https://www.facebook.com/"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                        <li class="soc_item"><a href="https://twitter.com/"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li class="soc_item"><a href="https://www.instagram.com/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li class="soc_item"><a href="https://vk.com"><i class="fa fa-vk" aria-hidden="true"></i></a></li>
                     </ul>
-                    <div class="shadow-block"></div>
                 </div>
-            </div>
-        </div>
-    </div>
-@endif
 
-@if( count($projects) !== 0 AND $categories_data['projects']->active == 1)
-    <div class="project-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 center">
-                    <h1 class="title section-title section-title_projects">{{ trans('base.our_project') }}</h1>
-                </div>
-                    @foreach($projects as $project)
-                        <div class="col-md-3 project-item_wrap">
-                            <a href="#" class="project-item show-project-item" data-project-id="{{ $project->id }}">
-                                <div class="project-item_img" style="background-image: url('{{ $project->getAttributeTranslate('Картинка') }}');"></div>
-                                <h3 class="project-item_title">{{ $project->getTranslate('title') }}</h3>
-                                <div class="project-item_description">
-                                    {!! $project->getTranslate('short_description') !!}
-                                </div>
-                            </a>
-                        </div>
-                    @endforeach
                 <div class="col-md-12">
-                    <a href="/{{ App::getLocale() }}/projects"><div class="btn btn__blue btn__center">{{ trans('base.all_project') }}</div></a>
+                    <div class="all-items_wrap"><a href="#" class="all-items  all-services retina">всі послуги</a></div>
+                    <h2 class="section_title section_title__services retina">Послуги</h2>
+                    <h3 class="section_description">Мы уверенны, что сотрудничество со студией «Dream-line»  </h3>
                 </div>
-            </div>
-                @foreach($projects as $project)
-                    <div class="project-popup_wrap clearfix" data-popup-id="{{ $project->id }}">
-                        <img class="project-popup_item-img" src="{{ $project->getAttributeTranslate('Картинка') }}" alt="{ $project->getTranslate('title') }}">
-                        <div class="col-md-3">
-                            <h3 class="project-item_title project-item_title-in-popup">{{ $project->getTranslate('title') }}</h3>
-                            <div class="project-item_description">
-                                {!! $project->getTranslate('short_description') !!}
-                            </div>
-                        </div>
-                        <div class="col-md-9">
-                            <div class="project-item_full-description">
-                                {!! $project->getTranslate('description') !!}
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-        </div>
-    </div>
-@endif
 
-@if( count($company) !== 0 AND $categories_data['company']->active == 1)
-    <div class="aboutus-section" style="background-image: url('{{ asset('/img/frontend/bg-about-us.jpg') }}');">
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <a href="#" class="services_item">
+                        <img class="services_item__img" src="/img/imgForSprite/makeup@3x.png" alt="">
+                        <h4 class="services_item__title">Верстка</h4>
+                        <p class="services_item__description">Мы уверенны, что сотрудничество со студией «Dream-line» - это 100% успех Вашего бизнеса.
+                        </p>
+                    </a>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <a href="#" class="services_item">
+                        <img class="services_item__img" src="/img/imgForSprite/programming@3x.png" alt="">
+                        <h4 class="services_item__title">Програмування</h4>
+                        <p class="services_item__description">Мы уверенны, что сотрудничество со студией «Dream-line» - это 100% успех Вашего бизнеса.
+                        </p>
+                    </a>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <a href="#" class="services_item">
+                        <img class="services_item__img" src="/img/imgForSprite/hosting@3x.png" alt="">
+                        <h4 class="services_item__title">Хостинг</h4>
+                        <p class="services_item__description">Мы уверенны, что сотрудничество со студией «Dream-line» - это 100% успех Вашего бизнеса.
+                        </p>
+                    </a>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <a href="#" class="services_item">
+                        <img class="services_item__img" src="/img/imgForSprite/design@3x.png" alt="">
+                        <h4 class="services_item__title">Веб-дизайн</h4>
+                        <p class="services_item__description">Мы уверенны, что сотрудничество со студией «Dream-line» - это 100% успех Вашего бизнеса.
+                        </p>
+                    </a>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <a href="#" class="services_item">
+                        <img class="services_item__img" src="/img/imgForSprite/seo@3x.png" alt="">
+                        <h4 class="services_item__title">Просування</h4>
+                        <p class="services_item__description">Мы уверенны, что сотрудничество со студией «Dream-line» - это 100% успех Вашего бизнеса.
+                        </p>
+                    </a>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <a href="#" class="services_item">
+                        <img class="services_item__img" src="/img/imgForSprite/rekonstruction@3x.png" alt="">
+                        <h4 class="services_item__title">Реконструкція</h4>
+                        <p class="services_item__description">Мы уверенны, что сотрудничество со студией «Dream-line» - это 100% успех Вашего бизнеса.
+                        </p>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section_news">
+
         <div class="container">
             <div class="row">
-                <div class="col-md-6">
-                    <img src="{{ asset('/img/frontend/logo.png') }}" alt="Gidrobud">
-                    <h1 class="title section-title section-title_about">{{ $company->getTranslate('title') }}</h1>
-                    <div class="section-description section-description_about-us">
-                        {!! $company->getTranslate('short_description')  !!}
-                    </div>
-                    <div class="btn btn__yellow callback">{{ trans('base.callback') }}</div>
-                </div>
-                <div class="col-md-6">
-                    <div class="dashed-block">
-                        {{ $company->getAttributeTranslate('Слоган') ? $company->getAttributeTranslate('Слоган') : '' }}
-                    </div>
 
+                <div class="col-md-12">
+                    <div class="all-items_wrap"><a href="#" class="all-items all-news retina">всі новини</a></div>
+                    <h2 class="section_title section_title__news retina">Новини</h2>
+                    <h3 class="section_description section_description__white">Мы уверенны, что сотрудничество со студией «Dream-line»
+                        - это 100% успех Вашего бизнеса. </h3>
                 </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <a href="#" class="services_item news_item">
+                        <img class="services_item__img" src="/img/news-1.jpg" alt="">
+                        <h4 class="services_item__title news_item__title">
+                            <div class="news-date">
+                                <div class="news-date_day">18</div><div class="news-date_month">feb</div>
+                            </div>
+                            Лучшее, что мы
+                            можем сделать</h4>
+                        <p class="services_item__description news_item__description">Безусловно, разработка сайтов любой сложности в г. Киев, Винница, Москва – это очень важно, но еще важнее оказать
+                        </p>
+                        <button class="news-button">Детальніше</button>
+                    </a>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <a href="#" class="services_item news_item">
+                        <img class="services_item__img" src="/img/news-2.jpg" alt="">
+                        <h4 class="services_item__title news_item__title">
+                            <div class="news-date">
+                                <div class="news-date_day">18</div><div class="news-date_month">feb</div>
+                            </div>
+                            Лучшее, что мы
+                            можем сделать</h4>
+                        <p class="services_item__description news_item__description">Безусловно, разработка сайтов любой сложности в г. Киев, Винница, Москва – это очень важно, но еще важнее оказать
+                        </p>
+                        <button class="news-button">Детальніше</button>
+                    </a>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <a href="#" class="services_item news_item">
+                        <img class="services_item__img" src="/img/news-3.jpg" alt="">
+                        <h4 class="services_item__title news_item__title">
+                            <div class="news-date">
+                                <div class="news-date_day">18</div><div class="news-date_month">feb</div>
+                            </div>
+                            Лучшее, что мы
+                            можем сделать</h4>
+                        <p class="services_item__description news_item__description">Безусловно, разработка сайтов любой сложности в г. Киев, Винница, Москва – это очень важно, но еще важнее оказать
+                        </p>
+                        <button class="news-button">Детальніше</button>
+                    </a>
+                </div>
+
             </div>
         </div>
+
     </div>
-@endif
 
-@include('frontend.worth')
+    <div class="section_portfolio">
 
-@if( count($services) !== 0 AND $categories_data['services']->active == 1)
-    <div class="services-section">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 center">
-                    <h1 class="title section-title section-title_services">{{ trans('base.prod_services') }}</h1>
+
+                <div class="col-md-12">
+                    <div class="all-items_wrap"><a href="#" class="all-items  all-portfolio retina">всі роботи</a></div>
+                    <h2 class="section_title section_title__portfolio retina">Портфоліо</h2>
+                    <h3 class="section_description">Мы уверенны, что сотрудничество со студией «Flex-Web» </h3>
                 </div>
-                @foreach($services as $service)
-                    <div class="col-md-4 project-item_wrap">
-                        <a href="/{{ App::getLocale() }}/services#{{ $service->id }}" class="project-item services-item">
-                            <h3 class="services-item_title services-item_title-main">{{ $service->getTranslate('title') }}</h3>
-                            <div class="project-item_description services-item_description">
-                                {!! $service->getTranslate('short_description')  !!}
+
+                <div class="col-md-12">
+                    <ul class="portfolio-type">
+                        <li class="portfolio-type_item active" data-portfolio-type="all">All</li>
+                        <li class="portfolio-type_item" data-portfolio-type="branding">Branding</li>
+                        <li class="portfolio-type_item" data-portfolio-type="design">Design</li>
+                        <li class="portfolio-type_item" data-portfolio-type="development">Development</li>
+                        <li class="portfolio-type_item" data-portfolio-type="strategy">Strategy</li>
+                    </ul>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4" data-category="branding">
+                    <a href="#" class="portfolio_item">
+                        <div class="portfolio_item__img" style="background-image: url('/img/portfolio-1.jpg');" alt="">
+                            <div class="portfolio_item-description">
+                                <h2 class="section_title portfolio-item_description-title">Заголовок</h2>
+                                <div class="portfolio_item-description-text">Безусловно, разработка сайтов любой сложности в г. Киев, Винница, Москва – это очень важно, но еще важнее оказать</div>
                             </div>
-                        </a>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4" data-category="design">
+                    <a href="#" class="portfolio_item">
+                        <div class="portfolio_item__img" style="background-image: url('/img/portfolio-2.jpg');" alt="">
+                            <div class="portfolio_item-description">
+                                <h2 class="section_title portfolio-item_description-title">Заголовок</h2>
+                                <div class="portfolio_item-description-text">Безусловно, разработка сайтов любой сложности в г. Киев, Винница, Москва – это очень важно, но еще важнее оказать</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4" data-category="development">
+                    <a href="#" class="portfolio_item">
+                        <div class="portfolio_item__img" style="background-image: url('/img/portfolio-1.jpg');" alt="">
+                            <div class="portfolio_item-description">
+                                <h2 class="section_title portfolio-item_description-title">Заголовок</h2>
+                                <div class="portfolio_item-description-text">Безусловно, разработка сайтов любой сложности в г. Киев, Винница, Москва – это очень важно, но еще важнее оказать</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4" data-category="development">
+                    <a href="#" class="portfolio_item">
+                        <div class="portfolio_item__img" style="background-image: url('/img/portfolio-2.jpg');" alt="">
+                            <div class="portfolio_item-description">
+                                <h2 class="section_title portfolio-item_description-title">Заголовок</h2>
+                                <div class="portfolio_item-description-text">Безусловно, разработка сайтов любой сложности в г. Киев, Винница, Москва – это очень важно, но еще важнее оказать</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4" data-category="branding">
+                    <a href="#" class="portfolio_item">
+                        <div class="portfolio_item__img" style="background-image: url('/img/portfolio-1.jpg');" alt="">
+                            <div class="portfolio_item-description">
+                                <h2 class="section_title portfolio-item_description-title">Заголовок</h2>
+                                <div class="portfolio_item-description-text">Безусловно, разработка сайтов любой сложности в г. Киев, Винница, Москва – это очень важно, но еще важнее оказать</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-4" data-category="strategy">
+                    <a href="#" class="portfolio_item">
+                        <div class="portfolio_item__img" style="background-image: url('/img/portfolio-2.jpg');" alt="">
+                            <div class="portfolio_item-description">
+                                <h2 class="section_title portfolio-item_description-title">Заголовок</h2>
+                                <div class="portfolio_item-description-text">Безусловно, разработка сайтов любой сложности в г. Киев, Винница, Москва – это очень важно, но еще важнее оказать</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section_slogan">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <img class="slogan-img_bg" src="/img/slogan_bg.png" alt="">
+                    <img class="slogan-img_pc" src="/img/slogan_pc.png" alt="">
+                    <div class="col-md-offset-3 col-md-9 col-sm-offset-2 col-sm-10 col-xs-12">
+                        <h1 class="slogan">Лучшее, что мы можем сделать	— Это создавать веб-сайты!</h1>
+                        <button class="slogan_btn">Замовити</button>
                     </div>
-                @endforeach
-                <div class="col-md-4">
-                    <a href="/{{ App::getLocale() }}/projects"><div class="btn btn__blue btn__services">{{ trans('base.more') }}</div></a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section_reviews">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="all-items_wrap"><a href="#" class="all-items all-reviews retina">всі відгукм</a></div>
+                    <h2 class="section_title section_title__reviews retina">Відгуки</h2>
+                    <h3 class="section_description">Мы уверенны, что сотрудничество со студией «Dream-line»
+                        - это 100% успех Вашего бизнеса. </h3>
+                </div>
+                <div class="col-md-12">
+                    <div class="owl-carousel">
+                        <div class="reviews-item clearfix">
+                            <div class="col-xs-12 col-sm-4 col-md-3">
+                                <div class="reviews-item_photo" style="background-image: url('img/reviews_1.jpg');"></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-8 col-md-9">
+                                <span class="reviews-item_author-name">Алексей </span>
+                                <span class="reviews-item_author-position">директор “Арт -центр”</span>
+                                <div class="reviews-item_text">Мы уверенны, что сотрудничество со студией «Dream-line» - это 100% успех Вашего бизнеса. Заказав у компании разработку нашего интернет-магазина, мы не пожалели. Нам сделали отличный интернет-магазин – простая и понятная админ. система, и лаконичный, стильный дизайн. Который превосходно отображает суть нашей компании. Очень понравилось, что все сотрудники компании – это, прежде всего, индивидуальны...</div>
+                            </div>
+                        </div>
+                        <div class="reviews-item clearfix">
+                            <div class="col-xs-12 col-sm-4 col-md-3">
+                                <div class="reviews-item_photo" style="background-image: url('img/reviews_1.jpg');"></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-8 col-md-9">
+                                <span class="reviews-item_author-name">Алексей </span>
+                                <span class="reviews-item_author-position">директор “Арт -центр”</span>
+                                <div class="reviews-item_text">Мы уверенны, что сотрудничество со студией «Dream-line» - это 100% успех Вашего бизнеса. Заказав у компании разработку нашего интернет-магазина, мы не пожалели. Нам сделали отличный интернет-магазин – простая и понятная админ. система, и лаконичный, стильный дизайн. Который превосходно отображает суть нашей компании. Очень понравилось, что все сотрудники компании – это, прежде всего, индивидуальны...</div>
+                            </div>
+                        </div>
+                        <div class="reviews-item clearfix">
+                            <div class="col-xs-12 col-sm-4 col-md-3">
+                                <div class="reviews-item_photo" style="background-image: url('img/reviews_1.jpg');"></div>
+                            </div>
+                            <div class="col-xs-12 col-sm-8 col-md-9">
+                                <span class="reviews-item_author-name">Алексей </span>
+                                <span class="reviews-item_author-position">директор “Арт -центр”</span>
+                                <div class="reviews-item_text">Мы уверенны, что сотрудничество со студией «Dream-line» - это 100% успех Вашего бизнеса. Заказав у компании разработку нашего интернет-магазина, мы не пожалели. Нам сделали отличный интернет-магазин – простая и понятная админ. система, и лаконичный, стильный дизайн. Который превосходно отображает суть нашей компании. Очень понравилось, что все сотрудники компании – это, прежде всего, индивидуальны...</div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
-@endif
 
+    <div class="section_customers">
 
-    <div class="license-orderers-section">
         <div class="container">
-            @if( count($licenses) !== 0 AND $categories_data['licenses']->active == 1)
-                <div class="row">
-                    <div class="col-md-12 center">
-                        <h1 class="title section-title section-title_license">{{ trans('base.licenses_sertif') }}</h1>
-                        <div class="license-description">
-                            {!! $categories_data['licenses']->getTranslate('short_description') !!}
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="owl-carousel">
-                            @foreach($licenses as $license)
-                                <div class="license-item" style="background-image: url('{{ $license->img }}');"></div>
-                            @endforeach
-                        </div>
-                        <a href="/{{ App::getLocale() }}/licenses"><div class="btn btn__blue btn__center">{{ trans('base.all_licenses') }}</div></a>
-                    </div>
-                </div>
-            @endif
+            <div class="row">
 
-            @if( count($customers) !== 0 AND $categories_data['customers']->active == 1)
-                <div class="row">
-                    <div class="col-md-12 center">
-                        <h1 class="title section-title section-title_orderers">{{ trans('base.customers') }}</h1>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="owl-carousel">
-                            @foreach($customers as $customer)
-                                <div class="orderers-item" style="background-image: url('{{ $customer->img }}');"></div>
-                            @endforeach
-                        </div>
-                    </div>
+                <div class="col-md-12">
+                    <div class="all-items_wrap"><a href="#" class="all-items all-customers retina">всі клієнти</a></div>
+                    <h2 class="section_title section_title__customers retina">Наші клієнти</h2>
+                    <h3 class="section_description">Мы уверенны, что сотрудничество со студией «Dream-line»
+                        - это 100% успех Вашего бизнеса. </h3>
                 </div>
-            @endif
 
+                <div class="col-xs-6 col-sm-6 col-md-4">
+                    <div class="customers_item"><img class="customers_item__img" src="/img/customer_1.png" alt="" class="customer_img"></div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4">
+                    <div class="customers_item"><img class="customers_item__img" src="/img/customer_2.png" alt="" class="customer_img"></div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4">
+                    <div class="customers_item"><img class="customers_item__img" src="/img/customer_3.png" alt="" class="customer_img"></div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4">
+                    <div class="customers_item"><img class="customers_item__img" src="/img/customer_4.png" alt="" class="customer_img"></div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4">
+                    <div class="customers_item"><img class="customers_item__img" src="/img/customer_5.png" alt="" class="customer_img"></div>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-4">
+                    <div class="customers_item"><img class="customers_item__img" src="/img/customer_6.png" alt="" class="customer_img"></div>
+                </div>
+            </div>
         </div>
+
     </div>
+{{--@endif--}}
+
+
 
 @endsection

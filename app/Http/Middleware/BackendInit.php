@@ -11,6 +11,7 @@ use App\Models\Text;
 use App\Models\Lang;
 use League\Flysystem\Config;
 use Debugbar;
+use Illuminate\Support\Facades\Artisan;
 
 class BackendInit {
 
@@ -24,10 +25,15 @@ class BackendInit {
 
 	public function handle($request, Closure $next)
 	{
-		$admin_categories = Category::where('parent_id',0)->get();
-		//Debugbar::info($admin_categories);
+		$admin_categories = Category::where('parent_id',0)
+			->orderBy('priority','desc')
+			->get();
+		//dd($admin_categories);
+		Debugbar::info($admin_categories);
+		Debugbar::addMeasure('now', LARAVEL_START, microtime(true));
 		//Подключение в Backend url типа
 		$url = url('adminpae3W');
+		//Artisan::call('view:clear');
 		//Подключение в Backend version
 		view()->share('version', config('app.version'));
 		view()->share('url', $url);

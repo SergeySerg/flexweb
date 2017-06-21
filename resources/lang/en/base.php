@@ -12,7 +12,11 @@ return [
 	| you want to customize your views to better match your application.
 	|
 	*/
-	'main' => 'Головна',
+	'main' => 'Main',
+	'services' => 'Services',
+	'news' => 'News',
+	'portfolio' => 'Portfolio',
+	'names' => 'site creation studio',
 	'company' => 'About us',
 	'project' => 'Projects',
 	'subject' => 'Subjects',

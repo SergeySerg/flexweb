@@ -29,7 +29,8 @@
         "App\\Providers\\EventServiceProvider",
         "App\\Providers\\RouteServiceProvider",
         "Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider",
-        "Barryvdh\\Debugbar\\ServiceProvider"
+        "Barryvdh\\Debugbar\\ServiceProvider",
+        "Kyslik\\ViewClear\\ViewClearServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -49,7 +50,8 @@
         "App\\Providers\\ConfigServiceProvider",
         "App\\Providers\\EventServiceProvider",
         "App\\Providers\\RouteServiceProvider",
-        "Barryvdh\\Debugbar\\ServiceProvider"
+        "Barryvdh\\Debugbar\\ServiceProvider",
+        "Kyslik\\ViewClear\\ViewClearServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

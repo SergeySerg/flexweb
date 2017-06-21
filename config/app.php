@@ -152,6 +152,7 @@ return [
 		 */
 		Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 		Barryvdh\Debugbar\ServiceProvider::class,
+		Kyslik\ViewClear\ViewClearServiceProvider::class,
 	],
 
 	/*

@@ -12,6 +12,10 @@ return [
 	| you want to customize your views to better match your application.
 	|
 	*/
+	'menu' => 'Меню',
+	'news' => 'Новости',
+	'portfolio' => 'Портфолио',
+	'names' => 'студия создания сайтов',
 	'address' => 'Адрес',
 	'telephone' => 'Телефон',
 	'callback' => 'заказать звонок',
