@@ -231,6 +231,12 @@
 
             </li>
 
+            <li @if(Request::is('*/comments'))class="active"@endif>
+                <a href="{{ route('comments_index') }}">
+                    <i class="icon-edit"></i>
+                    <span class="menu-text"> {{ trans('backend.comments') }} </span>
+                </a>
+            </li>
 
             <li @if(Request::is('*/texts'))class="active"@endif>
                 <a href="{{ route('text_index') }}">
@@ -359,9 +365,6 @@
 
 <script type="text/javascript">
     $(function() {
-
-
-
         $('table th input:checkbox').on('click' , function(){
             var that = this;
             $(this).closest('table').find('tr > td:first-child input:checkbox')
@@ -371,8 +374,6 @@
                     });
 
         });
-
-
         $('[data-rel="tooltip"]').tooltip({placement: tooltip_placement});
         function tooltip_placement(context, source) {
             var $source = $(source);
@@ -404,7 +405,6 @@
                 inp.value="This text field is disabled!";
             }
         });
-
 
         $(".chzn-select").chosen();
 
@@ -672,9 +672,6 @@
                 railVisible:true
             });
         });
-
-
-
 
         // Portlets (boxes)
         $('.widget-container-span').sortable({

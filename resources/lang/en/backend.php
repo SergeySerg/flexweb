@@ -14,5 +14,6 @@ return [
     */
 
     'welcome' => 'Welcome',
+    'comments' => 'Reviews',
 
 ];

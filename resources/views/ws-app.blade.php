@@ -26,7 +26,7 @@
 	{{-- /CSS --}}
 
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	{{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>--}}
 
 </head>
 
@@ -131,13 +131,13 @@
 </script>
 {{--Файл переводов--}}
 {{-- JS --}}
-	{{--<script src="{{ asset('/libs/jquery/dist/jquery.min.js') }}"></script>--}}
-	<script src="{{ asset('/js/frontend/common.js') }}?ver={{ $version }}"></script>
+	<script src="{{ asset('/libs/jquery/dist/jquery.min.js') }}"></script>
+
 	<script src="{{ asset('/libs/owl-carousel/owl.carousel.min.js') }}"></script>
 	<script src="{{ asset('/js/plugins/sweetalert.min.js') }}"></script>
 	<script src="http://azmind.com/demo/andia-agency/v2-1/assets/js/wow.min.js" type="application/javascript"></script>
 	<link href="http://azmind.com/demo/andia-agency/v2-1/assets/css/animate.css" rel="stylesheet">
-
+<script src="{{ asset('/js/frontend/common.js') }}?ver={{ $version }}"></script>
 <script>
 		new WOW().init();
 	</script>

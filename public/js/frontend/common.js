@@ -57,7 +57,7 @@ $(document).ready(function(){
             $('.container').find('[data-category]').fadeIn(1000);
         } else {
             $('.portfolio_item').parent().fadeOut(500);
-            $('.container').find('[data-category='+type_id+']').fadeIn(1000);
+            $('.container').find('[data-category="' + type_id + '"]').fadeIn(1000);
         }
     });
     /***********END Portfolio tabs*************/
