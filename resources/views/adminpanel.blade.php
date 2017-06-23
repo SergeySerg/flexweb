@@ -231,13 +231,6 @@
 
             </li>
 
-            <li @if(Request::is('*/comments'))class="active"@endif>
-                <a href="{{ route('comments_index') }}">
-                    <i class="icon-edit"></i>
-                    <span class="menu-text"> {{ trans('backend.comments') }} </span>
-                </a>
-            </li>
-
             <li @if(Request::is('*/texts'))class="active"@endif>
                 <a href="{{ route('text_index') }}">
                     <i class="icon-list-alt"></i>

@@ -206,82 +206,45 @@
         </div>
 
     </div>
-
-    <div class="section_reviews">
+    @if( count($reviews) !== 0 AND $categories_data['reviews']->active == 1)
+        <div class="section_reviews">
 
         <div class="container">
             <div class="row">
 
                 <div class="col-md-12">
                     <div class="all-items_wrap"><a href="#" class="all-items all-reviews retina">{{ trans('all_reviews') }}</a></div>
-                    <h2 class="section_title section_title__reviews retina">Відгуки</h2>
+                    <h2 class="section_title section_title__reviews retina">{{ $categories_data['reviews']->getTranslate('title') }}</h2>
 
-                    <h3 class="section_description">Мы уверенны, что сотрудничество со студией «Dream-line»
-                        - это 100% успех Вашего бизнеса. </h3>
+                    <h3 class="section_description">{!! $categories_data['reviews']->getTranslate('short_description') !!}</h3>
                 </div>
                 <div class="col-md-12">
                     <div class="owl-carousel">
-                        <div class="reviews-item clearfix">
-                            <div class="col-xs-12 col-sm-4 col-md-3">
-                                <div class="reviews-item_photo"
-                                     style="background-image: url('img/reviews_1.jpg');"></div>
-                            </div>
-                            <div class="col-xs-12 col-sm-8 col-md-9">
-                                <span class="reviews-item_author-name">Алексей </span>
-                                <span class="reviews-item_author-position">директор “Арт -центр”</span>
+                        @foreach($reviews as $review )
+                            <div class="reviews-item clearfix">
+                                <div class="col-xs-12 col-sm-4 col-md-3">
+                                    <div class="reviews-item_photo"
+                                         style="background-image: url('{{ asset($review->getAttributeTranslate('Фото клієнта')) }}');"></div>
+                                </div>
+                                <div class="col-xs-12 col-sm-8 col-md-9">
+                                    <span class="reviews-item_author-name">{{ $review->getAttributeTranslate('Ім\'я клієнта') }} </span>
+                                    <span class="reviews-item_author-position">{{ $review->getAttributeTranslate('Посада клієнта') }}</span>
 
-                                <div class="reviews-item_text">Мы уверенны, что сотрудничество со студией «Dream-line» -
-                                    это 100% успех Вашего бизнеса. Заказав у компании разработку нашего
-                                    интернет-магазина, мы не пожалели. Нам сделали отличный интернет-магазин – простая и
-                                    понятная админ. система, и лаконичный, стильный дизайн. Который превосходно
-                                    отображает суть нашей компании. Очень понравилось, что все сотрудники компании –
-                                    это, прежде всего, индивидуальны...
+                                    <div class="reviews-item_text">
+                                        {!! $review->getTranslate('short_description') !!}
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="reviews-item clearfix">
-                            <div class="col-xs-12 col-sm-4 col-md-3">
-                                <div class="reviews-item_photo"
-                                     style="background-image: url('img/reviews_1.jpg');"></div>
-                            </div>
-                            <div class="col-xs-12 col-sm-8 col-md-9">
-                                <span class="reviews-item_author-name">Алексей </span>
-                                <span class="reviews-item_author-position">директор “Арт -центр”</span>
+                        @endforeach
 
-                                <div class="reviews-item_text">Мы уверенны, что сотрудничество со студией «Dream-line» -
-                                    это 100% успех Вашего бизнеса. Заказав у компании разработку нашего
-                                    интернет-магазина, мы не пожалели. Нам сделали отличный интернет-магазин – простая и
-                                    понятная админ. система, и лаконичный, стильный дизайн. Который превосходно
-                                    отображает суть нашей компании. Очень понравилось, что все сотрудники компании –
-                                    это, прежде всего, индивидуальны...
-                                </div>
-                            </div>
-                        </div>
-                        <div class="reviews-item clearfix">
-                            <div class="col-xs-12 col-sm-4 col-md-3">
-                                <div class="reviews-item_photo"
-                                     style="background-image: url('img/reviews_1.jpg');"></div>
-                            </div>
-                            <div class="col-xs-12 col-sm-8 col-md-9">
-                                <span class="reviews-item_author-name">Алексей </span>
-                                <span class="reviews-item_author-position">директор “Арт -центр”</span>
-
-                                <div class="reviews-item_text">Мы уверенны, что сотрудничество со студией «Dream-line» -
-                                    это 100% успех Вашего бизнеса. Заказав у компании разработку нашего
-                                    интернет-магазина, мы не пожалели. Нам сделали отличный интернет-магазин – простая и
-                                    понятная админ. система, и лаконичный, стильный дизайн. Который превосходно
-                                    отображает суть нашей компании. Очень понравилось, что все сотрудники компании –
-                                    это, прежде всего, индивидуальны...
-                                </div>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
-
+    @endif
     <div class="section_customers">
         {{--/Clients section--}}
         @if( count($clients) !== 0 AND $categories_data['clients']->active == 1)

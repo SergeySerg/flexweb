@@ -78,14 +78,6 @@ Route::group(['prefix'=>'adminpae3W', 'middleware' => ['auth', 'backend.init']],
 	Route::get('/settings_recovery',['uses' => 'Backend\AdminSettingsController@recovery','as' => 'settings_recovery']);//Востановление записей после удаления
 	Route::get('/settings_delete',['uses' => 'Backend\AdminSettingsController@delete','as' => 'settings_delete']);//Окончательное удаление
 
- 	//Routes for Comments
-	Route::get('/comments',['uses' => 'Backend\AdminCommentsController@index','as' => 'comments_index']);//Вывод списка..
-	Route::get('/comments/create',['uses' => 'Backend\AdminCommentsController@create','as' => 'comments_create']);//Вывод формы создания элемента..
-	Route::post('/comments/create',['uses' => 'Backend\AdminCommentsController@store','as' => 'comments_store']);//Сохранение элемента
-	Route::delete('/comments/{id}',['uses' => 'Backend\AdminCommentsController@destroy','as' => 'comments_delete']);//Удаление элемента
-	Route::get('/comments/{id}',['uses' => 'Backend\AdminCommentsController@edit','as' => 'comments_edit']);//Вывод формы редакторирование..
-	Route::put('/comments/{id}',['uses' => 'Backend\AdminCommentsController@update','as' => 'comments_update']);//Сохранение после редактирования..
-
 	/*//Routes for Orders (Backend)
 	Route::get('/orders', ['uses' => 'Backend\AdminOrdersController@index', 'as' => 'orders_index']);//Вывод списка заказов
 	Route::delete('/orders/{id}', ['uses' => 'Backend\AdminOrdersController@destroy', 'as' => 'orders_delete']);//Вывод списка заказов*/
