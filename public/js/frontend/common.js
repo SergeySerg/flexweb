@@ -73,5 +73,41 @@ $(document).ready(function(){
         e.preventDefault();
     });
     /***********END Portfolio tabs*************/
+    /**********call-back**************/
+    $('#send').on('click', function(event){
+        $('#send').attr('disabled', true);
+        var data = new FormData($('form#contact-callback')[0]);
+        var url = $( "input[name$='url']" ).val();
+        console.log(data);
+        $.ajax({
+            url: url,
+            method: 'POST',
+            processData: false,
+            contentType: false,
+            data: data,
+            dataType : "json",
+            success: function(data){
+                //console.info('Server response: ', data);
+                if(data.success){
+                    swal(trans['base.success'], "", "success");
+                    $("#contact-callback").trigger("reset");
+                    $("#send").attr('disabled', false);
+
+                }
+                else{
+                    swal(trans['base.error'], data.message, "error");
+                    $("#send").attr('disabled', false);
+                }
+            },
+            error:function(data){
+                swal(trans['base.error']);
+                $("#send").attr('disabled', false);
+                //  jQuery("#resume-form").trigger("reset");
+            }
+
+        });
+        event.preventDefault();
+    });
+    /**********END call-back**************/
 
 });

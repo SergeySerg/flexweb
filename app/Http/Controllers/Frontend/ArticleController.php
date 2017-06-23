@@ -131,7 +131,7 @@ class ArticleController extends Controller {
 			/*make rules for validation*/
 			$rules = [
 				'name' => 'required|max:50',
-				'phone' => 'required|numeric',
+				'email' => 'required|email',
 				'text' => 'required|max:600'
 			];
 
@@ -147,9 +147,9 @@ class ArticleController extends Controller {
 			}
 
 			//Send item on admin email address
-			Mail::send('emails.contact', $all, function($message){
+			Mail::send('emails.callback', $all, function($message){
 				$email = getSetting('config.email');
-				$message->to($email, 'Gidrobud')->subject('Сообщение с сайта "Gidrobud"');
+				$message->to($email, 'Flexweb')->subject('Сообщение с сайта "Flexweb"');
 			});
 			return response()->json([
 				'success' => 'true'

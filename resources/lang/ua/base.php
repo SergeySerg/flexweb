@@ -14,10 +14,10 @@ return [
 	*/
 	'main' => 'Головна',
 	'portfolio' => 'Портфоліо',
-	'all_portfolio' => 'всі роботы',
+	'all_portfolio' => 'всі роботи',
 	'all' => 'Всі',
 	'all_clients' => 'всі клієнти',
-	'all_news' => 'all news',
+	'all_news' => 'всі новини',
 	'names' => 'студія створення сайтів',
 	'order' => 'Замовити',
 	'company' => 'Про нас',
@@ -25,6 +25,7 @@ return [
 	'services' => 'Послуги',
 	'news' => 'Новини',
 	'all_reviews' => 'всі відгуки',
+	'back' => 'назад',
 	'project' => 'Проекти',
 	'subject' => 'Предмети',
 	'menu' => 'Меню',
@@ -51,9 +52,10 @@ return [
 	'map' => 'Ми на карті',
 	'cal' => 'зворотній',
 	'connection' => 'зв\'язок',
-	'name' => 'Ваше імя',
+	'name' => 'Імя',
 	'message' => 'Повідомлення',
 	'callback_ring' => 'Зворотній зв\'язок',
+	'question' => 'Ваше запитання',
 
 
 

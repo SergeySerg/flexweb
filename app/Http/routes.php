@@ -90,7 +90,7 @@ Route::group(['prefix'=>'adminpae3W', 'middleware' => ['auth', 'backend.init']],
 Route::group(['middleware' => 'frontend.init'], function(){
 	/*Callback group route*/
 	Route::post('/{lang}/contact', ['uses' => 'Frontend\ArticleController@contact','as' => 'contact']);//Обработчик Обратной связи
-	Route::post('/{lang}/vacancies', ['uses' => 'Frontend\ArticleController@vacancies','as' => 'vacancies']);//Обработчик Вакансій
+	/*Route::post('/{lang}/vacancies', ['uses' => 'Frontend\ArticleController@vacancies','as' => 'vacancies']);//Обработчик Вакансій*/
 	Route::get('/{lang}/{type?}', ['uses' => 'Frontend\ArticleController@index', 'as' => 'article_index'])/*->where('type', 'main|company|services|projects|vacancies|licenses|contacts')*/;
 	Route::get('/{lang}/{type}/{id}', ['uses' => 'Frontend\ArticleController@show', 'as' => 'article_show'])->where('type', 'page|rate');
 

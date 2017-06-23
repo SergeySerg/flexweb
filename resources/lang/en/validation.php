@@ -105,7 +105,7 @@ return [
 	'attributes' => [
 		'name' => 'Your name',
 		'phone' => 'E-mail',
-		'comment' => 'Message'
+		'comment' => 'Your question'
 	],
 
 ];

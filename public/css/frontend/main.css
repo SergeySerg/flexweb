@@ -529,6 +529,79 @@ body {
   transition: all .3s ease; }
 
 /*-------------------END news section----------------------*/
+/*-------------------news section----------------------*/
+.section_news {
+  padding-top: 40px;
+  background: #08c5a1 url("../../img/frontend/slider-bg.png") center;
+  color: #fff; }
+
+.all-news {
+  background-position: 0 -130px; }
+
+.news_item {
+  padding: 0;
+  margin: 0 10% 40px; }
+
+.section_title__news {
+  background-position: 0 -302px; }
+
+.news_item__title {
+  margin-top: 25px;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease; }
+
+.news_item__description {
+  padding: 0;
+  font-family: "OpenSansLightItalic", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease; }
+
+.news-date {
+  float: left;
+  width: 44px;
+  height: 44px;
+  margin-top: 3px;
+  padding-top: 4px;
+  border: 2px solid #47667e;
+  color: #47667e;
+  font-family: "OpenSansBold", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 1em;
+  line-height: 18px; }
+
+.news-date_month {
+  font-size: 0.5em;
+  text-transform: uppercase;
+  font-family: "OpenSansRegular", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; }
+
+.section_description__white {
+  background: url("../../img/frontend/dotted_white.png") center bottom repeat-x; }
+
+.news-button {
+  width: 150px;
+  height: 40px;
+  margin-top: 25px;
+  border: none;
+  background-color: #47667e;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "OpenSansRegular", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif;
+  font-size: 0.8125em;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease; }
+
+.services_item:hover .news_item__title {
+  color: #fff;
+  text-decoration: underline;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease; }
+
+.services_item:hover .news-button {
+  background: #ee515f;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease; }
+
+/*-------------------END news section----------------------*/
+
 /*-------------------Portfolio section----------------------*/
 .section_portfolio {
   padding-bottom: 90px;

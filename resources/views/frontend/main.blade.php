@@ -59,7 +59,7 @@
                 @if( count($services) !== 0 AND $categories_data['services']->active == 1)
 
                     <div class="col-md-12">
-                        <div class="all-items_wrap"><a href="#"
+                        <div class="all-items_wrap"><a href="/{{ App::getLocale() }}/services"
                                                        class="all-items  all-services retina">{{ trans('base.all_services') }}</a>
                         </div>
                         <h2 class="section_title section_title__services retina">{{ $categories_data['services']->getTranslate('title') }}</h2>
@@ -95,7 +95,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="all-items_wrap"><a href="#"
+                        <div class="all-items_wrap"><a href="/{{ App::getLocale() }}/news"
                                                        class="all-items all-news retina">{{ trans('base.all_news') }}</a>
                         </div>
                         <h2 class="section_title section_title__news retina">{{ $categories_data['news']->getTranslate('title') }}</h2>
@@ -123,7 +123,7 @@
                 </div>
             </div>
         </div>
-<trans></trans>
+
     @endif
     {{--/News section--}}
     {{--Portfolio section--}}
@@ -135,7 +135,7 @@
                 <div class="row">
 
                     <div class="col-md-12">
-                        <div class="all-items_wrap"><a href="#"
+                        <div class="all-items_wrap"><a href="/{{ App::getLocale() }}/portfolio"
                                                        class="all-items  all-portfolio retina">{{ trans('base.all_portfolio') }}</a>
                         </div>
                         <h2 class="section_title section_title__portfolio retina">{{ $categories_data['portfolio']->getTranslate('title') }}</h2>
@@ -213,7 +213,7 @@
             <div class="row">
 
                 <div class="col-md-12">
-                    <div class="all-items_wrap"><a href="#" class="all-items all-reviews retina">{{ trans('all_reviews') }}</a></div>
+                    <div class="all-items_wrap"><a href="#" class="all-items all-reviews retina">{{ trans('base.all_reviews') }}</a></div>
                     <h2 class="section_title section_title__reviews retina">{{ $categories_data['reviews']->getTranslate('title') }}</h2>
 
                     <h3 class="section_description">{!! $categories_data['reviews']->getTranslate('short_description') !!}</h3>

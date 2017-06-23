@@ -18,6 +18,7 @@ return [
 	'news' => 'News',
 	'all_news' => 'all news',
 	'all_reviews' => 'all reviews',
+	'back' => 'back',
 	'more' => 'More',
 	'portfolio' => 'Portfolio',
 	'all_portfolio' => 'all works',
@@ -34,6 +35,9 @@ return [
 	'tel' => 'tel.',
 	'prices' => 'Prices',
 	'download' => 'Download',
+	'callback_ring' => 'Callback',
+	'name' => 'Name',
+	'question' => 'Your question',
 
 	'our_benefits' => 'Our benefits',
 	'our_priced' => 'Our priced',
