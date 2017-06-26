@@ -56,7 +56,7 @@ $(document).ready(function(){
         if(type_id == 'all'){
             $('.container').find('[data-category]').fadeIn(1000);
         } else {
-            $('.portfolio_item').parent().fadeOut(500);
+            $('.portfolio_item').parent().fadeOut(0);
             $('.container').find('[data-category="' + type_id + '"]').fadeIn(1000);
         }
     });
@@ -73,6 +73,29 @@ $(document).ready(function(){
         e.preventDefault();
     });
     /***********END Portfolio tabs*************/
+
+    /***********callback pop-up*************/
+    $('.callback').click(function(event){
+        $('#overlay').fadeIn(400,
+            function(){
+                $('#callback')
+                    .css('display', 'block')
+                    .animate({opacity: 1, top: '45%'}, 200);
+            });
+        //Popup advice ClOSE
+        $('#overlay, .close').click( function(){
+            $('#callback')
+                .animate({opacity: 0, top: '45%'}, 200,
+                    function(){
+                        $(this).css('display', 'none');
+                        $('#overlay').fadeOut(400);
+                    }
+                );
+        });
+        event.preventDefault();
+    });
+    /***********END callback pop-up*************/
+
     /**********call-back**************/
     $('#send').on('click', function(event){
         $('#send').attr('disabled', true);

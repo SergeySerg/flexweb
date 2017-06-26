@@ -8,7 +8,7 @@
   font-family: "OpenSansLight";
   font-style: normal;
   font-weight: normal;
-  src: url("../../fonts/frontend/OpenSansLight/OpenSansLight.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansLight/OpenSansLight.woff") format("woff"), url("../../fonts/frontend/OpenSansLight/OpenSansLight.ttf") format("truetype"); }
+  src: url("../../fonts/frontend/OpenSansLight/OpenSansLight.eot?#iefix") format("embedded-opentype"), url("../../fonts/frontend/OpenSansLight/OpenSansLight.woff") format("woff"), url("../../fonts/frontend/OpenSansLight/OpenSansLight.ttf") format("truetype"); }
 
 @font-face {
   font-family: "OpenSansLightItalic";
