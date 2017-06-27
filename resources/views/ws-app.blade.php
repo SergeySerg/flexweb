@@ -138,7 +138,7 @@
 	<div class="close"></div>
 	<h1 class="title section-title section-title_service-form">{{ trans('base.callback_ring') }}</h1>
 	<form action="" class="callback" method="post">
-		<input type="text" name="name" placeholder="{{ trans('base.fio') }}">
+		<input type="text" name="name" placeholder="{{ trans('base.name') }}">
 		<input type="number" name="phone" placeholder="{{ trans('base.tel') }}">
 		<textarea rows="8" name="text" placeholder="{{ trans('base.message') }}"></textarea>
 		<input type="hidden" name="_token" value="{{csrf_token()}}"/>

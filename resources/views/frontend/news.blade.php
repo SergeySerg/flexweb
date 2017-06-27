@@ -5,7 +5,7 @@
         <div class="container">
             <div class="page-wrap">
                 <div class="page-header">
-                    <a href="#" class="btn-back btn-back_news">{{ trans('base.back') }}</a>
+                    <a href="javascript:history.go(-1)" class="btn-back btn-back_news">{{ trans('base.back') }}</a>
                         @for ($i=0; $i < 1; $i++)
                             <div class="row top-news_wrap">
                                 <div class="col-md-12">
@@ -19,7 +19,7 @@
                                     <div class="top-news_description-wrap">
                                         <img class="top-news_img" src="{{ asset( $news[$i]->getAttributeTranslate('Картинка новини')) }}" alt="{{ $news[$i]->getTranslate('title') }}">
                                         <div class="top-news_description">
-                                            {!! $news[$i]->getTranslate('description') !!}
+                                            {!! str_limit($news[$i]->getTranslate('description'),1100,'...' )!!}
                                             <a class="more" href="#">{{ trans('base.more') }}</a>
                                         </div>
                                     </div>
@@ -41,7 +41,7 @@
                                 <img class="services_item__img"
                                      src="{{ asset( $new->getAttributeTranslate('Картинка новини')) }}"
                                      alt="{{ $new->getTranslate('title') }}">
-                                <h4 class="services_item__title news_item__title">
+                                <h4 class="services_item__title news_item__title page-news_item__title">
                                     <div class="news-date">
                                         <div class="news-date_day">{{ date("d", strtotime($new->date))  }}</div>
                                         <div class="news-date_month">{{ date("M", strtotime($new->date)) }}</div>

@@ -214,7 +214,9 @@
             <div class="row">
 
                 <div class="col-md-12">
+{{--
                     <div class="all-items_wrap"><a href="#" class="all-items all-reviews retina">{{ trans('base.all_reviews') }}</a></div>
+--}}
                     <h2 class="section_title section_title__reviews retina">{{ $categories_data['reviews']->getTranslate('title') }}</h2>
 
                     <h3 class="section_description">{!! $categories_data['reviews']->getTranslate('short_description') !!}</h3>
@@ -253,7 +255,9 @@
             <div class="row">
 
                 <div class="col-md-12">
+{{--
                     <div class="all-items_wrap"><a href="#" class="all-items all-customers retina">{{ trans('base.all_clients') }}</a></div>
+--}}
                     <h2 class="section_title section_title__customers retina">{{ $categories_data['clients']->getTranslate('title') }}</h2>
 
                     <h3 class="section_description">{!! $categories_data['clients']->getTranslate('short_description') !!}</h3>

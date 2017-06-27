@@ -7,7 +7,7 @@
                 <div class="page-header">
                     <div class="row">
                         <div class="col-md-12">
-                            <a href="#" class="btn-back">{{ trans('base.back') }}</a>
+                            <a href="javascript:history.go(-1)" class="btn-back">{{ trans('base.back') }}</a>
                         </div>
                     </div>
                     @foreach($services as $key =>$service )
@@ -19,10 +19,8 @@
                                 </div>
                             </div>
                             <div class="row service-title-content_wrap">
-                                <div class="col-xs-12 col-sm-4 col-md-5">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
                                     <img class="page-header_content__img" src="{{ asset( $service->getAttributeTranslate('Картинка послуги')) }}" alt="{{ $service->getTranslate('title') }}">
-                                </div>
-                                <div class="col-xs-12 col-sm-8 col-md-7">
                                     <div class="service-item_description">
                                         {!! $service->getTranslate('description') !!}
                                     </div>

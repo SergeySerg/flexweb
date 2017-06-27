@@ -7,7 +7,7 @@
                 <div class="page-header">
                     <div class="row">
                         <div class="col-md-12">
-                            <a href="#" class="btn-back">{{ trans('base.back') }}</a>
+                            <a href="javascript:history.go(-1)" class="btn-back">{{ trans('base.back') }}</a>
                         </div>
                         <div class="col-md-12">
                             <h2 class="section_title section_title__contact-page">{{ $categories_data['portfolio']->getTranslate('title') }}</h2>
