@@ -16,7 +16,7 @@
 	-webkit-box-shadow: 0 1px 2px #d1d1d1;
 	box-shadow: 0 1px 2px #d1d1d1;">
     <tr >
-        <td colspan="2" style="text-align: center;font-style:italic;">Свяжитесь пожалуйста с нами </td>
+        <td colspan="2" style="text-align: center;font-style:italic;">Свяжитесь пожалуйста с нами</td>
     </tr>
 
     <tr>

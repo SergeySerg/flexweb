@@ -42,7 +42,7 @@ return [
 	"integer"              => "The :attribute must be an integer.",
 	"ip"                   => "The :attribute must be a valid IP address.",
 	"max"                  => [
-		"numeric" => "The :attribute may not be greater than :max.",
+		"numeric" => "Поле :attribute не повинно містити більше 20 символів",
 		"file"    => "Розмір прикріпленого файлу (:attribute) повинен бути не більше :max кілобайт.",
 		"string"  => ":attribute не може бути більше, ніж :max символів.",
 		"array"   => "The :attribute may not have more than :max items.",

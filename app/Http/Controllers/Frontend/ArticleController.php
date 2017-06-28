@@ -34,15 +34,6 @@ class ArticleController extends Controller {
 	public function index($lang, $type = 'main')
 	{
 //dd($type);
-		/*$static_page = Category::where('link', $type)
-			->first()
-			->articles()
-			->activearticles() // use scopeActiveArticles in Article Model
-			->get();
-		dd($static_page);*/
-		//dd($type);
-		//dump($news);
-		//dd($video->category()->first()->active);
 		return view('frontend.' . $type);
 
 	}
@@ -53,18 +44,14 @@ class ArticleController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($lang, $type, $id)
-	{
-		//dd('23w2');
-		/*$static_page = Category::where('link', $type)
-		->first()
-		->articles()
-		->where('id', $id)
+	public function show($lang, $type, $id)	{
+
+		$article = Article::where('id', $id)
 		->activearticles() // use scopeActiveArticles in Article Model
 		->first();
-		view()->share('static_page', $static_page);*/
+		//dd($article);
+		return view('frontend.single_news')->with(compact('article'));
 
-		return view('frontend.' . $type);
 
 	}
 
@@ -121,6 +108,7 @@ class ArticleController extends Controller {
 	{
 		//
 	}
+	//Send letter from contact form
 	public function contact(Request $request, $lang)
 	{
 		//dd('contact');
@@ -148,6 +136,43 @@ class ArticleController extends Controller {
 
 			//Send item on admin email address
 			Mail::send('emails.callback', $all, function($message){
+				$email = getSetting('config.email');
+				$message->to($email, 'Flexweb')->subject('Сообщение с сайта "Flexweb"');
+			});
+			return response()->json([
+				'success' => 'true'
+			]);
+		}
+	}
+
+	// Send letter from popup form
+	public function callback(Request $request, $lang)
+	{
+		//dd('callback');
+		if ($request ->isMethod('post')){
+			/*get [] from request*/
+			$all = $request->all();
+
+			/*make rules for validation*/
+			$rules = [
+				'name' => 'required|max:50',
+				'phone' => 'required|numeric',
+				'text' => 'required|max:600'
+			];
+
+			/*validation [] according to rules*/
+			$validator = Validator::make($all, $rules);
+
+			/*send error message after validation*/
+			if ($validator->fails()) {
+				return response()->json(array(
+					'success' => false,
+					'message' => $validator->messages()->first()
+				));
+			}
+
+			//Send item on admin email address
+			Mail::send('emails.contact', $all, function($message){
 				$email = getSetting('config.email');
 				$message->to($email, 'Flexweb')->subject('Сообщение с сайта "Flexweb"');
 			});

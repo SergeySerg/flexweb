@@ -20,7 +20,7 @@
                                         <img class="top-news_img" src="{{ asset( $news[$i]->getAttributeTranslate('Картинка новини')) }}" alt="{{ $news[$i]->getTranslate('title') }}">
                                         <div class="top-news_description">
                                             {!! str_limit($news[$i]->getTranslate('description'),1100,'...' )!!}
-                                            <a class="more" href="#">{{ trans('base.more') }}</a>
+                                            <a class="more" href="/{{ App::getLocale() }}/news/{{$news[$i]->id}}">{{ trans('base.more') }}</a>
                                         </div>
                                     </div>
                                 </div>
@@ -37,7 +37,7 @@
 
                     @foreach($news as $new)
                         <div class="col-xs-12 col-sm-6 col-md-4">
-                            <a href="#" class="services_item news_item">
+                            <a href="/{{ App::getLocale() }}/news/{{$new->id}}" class="services_item news_item">
                                 <img class="services_item__img"
                                      src="{{ asset( $new->getAttributeTranslate('Картинка новини')) }}"
                                      alt="{{ $new->getTranslate('title') }}">

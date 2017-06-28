@@ -38,7 +38,7 @@
                     @foreach($portfolio as $portfolio_item)
                         <div class="col-xs-12 col-sm-6 col-md-4"
                              data-category="{{ $portfolio_item->getAttributeTranslate('Відношення до категорії сайту') }}">
-                            <a href="#" class="portfolio_item">
+                            <a href="{{ asset($portfolio_item->getAttributeTranslate('Посилання на сайт')) }}" class="portfolio_item" target="_blank">
                                 <div class="portfolio_item__img" style="background-image: url('{{ asset($portfolio_item->getAttributeTranslate('Головна картинка')) }}');"
                                      alt="{{ $portfolio_item->getTranslate('title') }}">
                                     <div class="portfolio_item-description">

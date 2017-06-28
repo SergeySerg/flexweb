@@ -73,8 +73,6 @@
 				</ul>
 				<div class="contact-show">
 					<div class="phone active"><div class="arrow-bottom"></div>{{--{{$texts->get('telephone')}}--}}
-						{{--+38 (073) 555-94-51<br>
-						+38 (098) 555-94-51--}}
 						<img src="{{ asset('/img/frontend/phone.png') }}" alt="">
 					</div>
 					<div class="map"><div class="arrow-bottom"></div>{{$texts->get('address')}}</div>
@@ -137,11 +135,12 @@
 <div id="callback" style="display: none;">
 	<div class="close"></div>
 	<h1 class="title section-title section-title_service-form">{{ trans('base.callback_ring') }}</h1>
-	<form action="" class="callback" method="post">
+	<form action="" id="callback-popup" class="callback" method="post">
 		<input type="text" name="name" placeholder="{{ trans('base.name') }}">
 		<input type="number" name="phone" placeholder="{{ trans('base.tel') }}">
 		<textarea rows="8" name="text" placeholder="{{ trans('base.message') }}"></textarea>
 		<input type="hidden" name="_token" value="{{csrf_token()}}"/>
+		<input type="hidden" name="url" value="/{{ App::getLocale() }}/callback"/>
 		<button type="submit" id="submit-send" class="btn_send">{{ trans('base.send') }}</button>
 	</form>
 </div>

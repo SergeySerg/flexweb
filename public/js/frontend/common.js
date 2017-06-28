@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 /************hover effect on contact block in header************/
     $('.contact_item-wrap i').hover( function () {
         $('.contact_item-wrap i').removeClass('active');
@@ -75,7 +74,7 @@ $(document).ready(function(){
     /***********END Portfolio tabs*************/
 
     /***********callback pop-up*************/
-    $('.callback').click(function(event){
+    $('.callback-popup').click(function(event){
         $('#overlay').fadeIn(400,
             function(){
                 $('#callback')
@@ -101,7 +100,7 @@ $(document).ready(function(){
         $('#send').attr('disabled', true);
         var data = new FormData($('form#contact-callback')[0]);
         var url = $( "input[name$='url']" ).val();
-        console.log(data);
+        console.log(url);
         $.ajax({
             url: url,
             method: 'POST',
@@ -132,5 +131,42 @@ $(document).ready(function(){
         event.preventDefault();
     });
     /**********END call-back**************/
+    /**********call-back Popup**************/
+    $('#submit-send').on('click', function(event){
+        //$('#submit-send').attr('disabled', true);
+        //alert('erew');
+        var data =  new FormData($('form#callback-popup')[0]);
+        /*console.info(data);*/
+        $.ajax({
+            url:'/ua/callback',
+            method: 'POST',
+            processData: false,
+            contentType: false,
+            data: data,
+            dataType : "json",
+            success: function(data){
+                //console.info('Server response: ', data);
+                if(data.success){
+                    swal(trans['base.success'], "", "success");
+                    $("#callback-popup").trigger("reset");
+                    $('#callback,#overlay').hide();
+                    $("#submit-send").attr('disabled', false);
+
+                }
+                else{
+                    swal(trans['base.error'], data.message, "error");
+                    $("#submit-send").attr('disabled', false);
+                }
+            },
+            error:function(data){
+                swal(trans['base.error']);
+                $("#submit-send").attr('disabled', false);
+                //  jQuery("#resume-form").trigger("reset");
+            }
+
+        });
+        event.preventDefault();
+    });
+    /**********END call-back Popup**************/
 
 });

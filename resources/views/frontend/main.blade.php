@@ -23,7 +23,7 @@
                                         <div class="slide-name">{{ $slider_item->getTranslate('title') }}</div>
                                         <div class="slide_main-description">{!! $slider_item->getTranslate('short_description') ? $slider_item->getTranslate('short_description') : " "  !!}</div>
                                         <div class="slide_description">{!! $slider_item->getTranslate('description') ? $slider_item->getTranslate('description') : " "  !!}</div>
-                                        <button class="order callback">{{ trans('base.order') }}</button>
+                                        <button class="order callback-popup">{{ trans('base.order') }}</button>
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                     </div>
                     @foreach($services as $service)
                         <div class="col-xs-12 col-sm-6 col-md-4">
-                            <a href="#" class="services_item">
+                            <a href="/{{ App::getLocale() }}/services/{{$service->id}}" class="services_item">
                                 <img class="services_item__img"
                                      src="{{ asset( $service->getAttributeTranslate('Картинка послуги')) }}"
                                      alt="{{ $service->getTranslate('title') }}">
@@ -103,7 +103,7 @@
                     </div>
                     @foreach($news as $new)
                         <div class="col-xs-12 col-sm-6 col-md-4">
-                            <a href="#" class="services_item news_item">
+                            <a href="/{{ App::getLocale() }}/news/{{$new->id}}" class="services_item news_item">
                                 <div class="services_item__img-wrap">
                                     <img class="services_item__img"
                                          src="{{ asset( $new->getAttributeTranslate('Картинка новини')) }}"
@@ -165,7 +165,7 @@
                     @foreach($portfolio as $portfolio_item)
                         <div class="col-xs-12 col-sm-6 col-md-4"
                              data-category="{{ $portfolio_item->getAttributeTranslate('Відношення до категорії сайту') }}">
-                            <a href="{{ asset($portfolio_item->getAttributeTranslate('Посилання на сайт')) }}" class="portfolio_item">
+                            <a href="{{ asset($portfolio_item->getAttributeTranslate('Посилання на сайт')) }}" class="portfolio_item" target="_blank">
                                 <div class="portfolio_item__img" style="background-image: url('{{ asset($portfolio_item->getAttributeTranslate('Головна картинка')) }}');"
                                      alt="{{ $portfolio_item->getTranslate('title') }}">
                                     <div class="portfolio_item-description">
@@ -199,7 +199,7 @@
 
                     <div class="col-md-offset-3 col-md-9 col-sm-offset-2 col-sm-10 col-xs-12">
                         <h1 class="slogan">{{$texts->get('slogan')}}</h1>
-                        <button class="slogan_btn callback">{{ trans('base.order') }}</button>
+                        <button class="slogan_btn callback-popup">{{ trans('base.order') }}</button>
                     </div>
                 </div>
 
