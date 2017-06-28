@@ -23,7 +23,7 @@
 	<link href="{{ asset('/css/frontend/fonts.css') }}" rel="stylesheet" type="text/css" media="all" />
 	<link href="{{ asset('/css/frontend/font-awesome.min.css') }}" rel="stylesheet" type="text/css" media="all" />
 	<link href="{{ asset('/css/frontend/main.css') }}?ver={{ $version }}" rel="stylesheet" type="text/css" media="all" />
-	<link rel="stylesheet" href="{{ asset('/css/plugins/sweetalert.css') }}">
+	<link href="{{ asset('/css/plugins/sweetalert.css') }}" rel="stylesheet" type="text/css" media="all">
 	{{-- /CSS --}}
 
 
@@ -161,12 +161,7 @@
 
 	<script src="{{ asset('/libs/owl-carousel/owl.carousel.min.js') }}"></script>
 	<script src="{{ asset('/js/plugins/sweetalert.min.js') }}"></script>
-	<script src="http://azmind.com/demo/andia-agency/v2-1/assets/js/wow.min.js" type="application/javascript"></script>
-	<link href="http://azmind.com/demo/andia-agency/v2-1/assets/css/animate.css" rel="stylesheet">
-<script src="{{ asset('/js/frontend/common.js') }}?ver={{ $version }}"></script>
-<script>
-		new WOW().init();
-	</script>
+	<script src="{{ asset('/js/frontend/common.js') }}?ver={{ $version }}"></script>
 {{-- JS --}}
 </body>
 </html>
