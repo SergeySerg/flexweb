@@ -62,7 +62,7 @@ $(document).ready(function(){
     /***********END Portfolio tabs*************/
     /***********Services tabs*************/
     $('.service-item').fadeOut(0);
-    $('.services_item').click( function (e) {
+    $('.services_item__click').click( function (e) {
         var type_id = $(this).attr('data-service-id');
         $('.service-item').slideUp(600);
         $('.page-header').find('[data-service='+type_id+']').slideDown(600);
@@ -94,6 +94,17 @@ $(document).ready(function(){
         event.preventDefault();
     });
     /***********END callback pop-up*************/
+
+    /***********Open service on services page*************/
+    var pageHash = window.location.hash.substr(1);
+    if(pageHash.indexOf("service") + 1){
+        window.location.hash = '';
+    }
+    if(pageHash){
+        $('[data-service-id=' + pageHash + ']').trigger('click');
+        console.info(pageHash);
+    };
+    /***********END open service on services page*************/
 
     /**********call-back**************/
     $('#send').on('click', function(event){

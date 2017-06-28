@@ -116,7 +116,7 @@
 					@if( count($portfolio) !== 0 AND $categories_data['portfolio']->active == 1)
 						<a class="footer-nav_item" href="/{{ App::getLocale() }}/portfolio">{{ trans('base.portfolio') }}</a>
 					@endif
-					<a class="footer-nav_item" href="/{{ App::getLocale() }}/contacts">{{ trans('base.contacts') }}</a>
+					<a class="footer-nav_item" href="/{{ App::getLocale() }}/contact">{{ trans('base.contacts') }}</a>
 				</div>
 				<ul class="footer-soc">
 					@if( count($social) !== 0 AND $categories_data['social']->active == 1)

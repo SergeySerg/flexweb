@@ -46,8 +46,7 @@
 
                             @foreach($social as $social_item)
                                 <li class="soc_item">
-                                    <a
-                                            href="{{$social_item->getAttributeTranslate('Ссилка') ? $social_item->getAttributeTranslate('Ссилка') : '#' }}">{!!$social_item->getAttributeTranslate('Иконка') ? $social_item->getAttributeTranslate('Иконка') : ' ' !!}</a>
+                                    <a href="{{$social_item->getAttributeTranslate('Ссилка') ? $social_item->getAttributeTranslate('Ссилка') : '#' }}">{!!$social_item->getAttributeTranslate('Иконка') ? $social_item->getAttributeTranslate('Иконка') : ' ' !!}</a>
                                 </li>
                             @endforeach
 
@@ -68,7 +67,7 @@
                     </div>
                     @foreach($services as $service)
                         <div class="col-xs-12 col-sm-6 col-md-4">
-                            <a href="/{{ App::getLocale() }}/services/{{$service->id}}" class="services_item">
+                            <a href="/{{ App::getLocale() }}/services/#service-{{$service->id}}" class="services_item">
                                 <img class="services_item__img"
                                      src="{{ asset( $service->getAttributeTranslate('Картинка послуги')) }}"
                                      alt="{{ $service->getTranslate('title') }}">

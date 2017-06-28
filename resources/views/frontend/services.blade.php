@@ -10,8 +10,8 @@
                             <a href="javascript:history.go(-1)" class="btn-back">{{ trans('base.back') }}</a>
                         </div>
                     </div>
-                    @foreach($services as $key =>$service )
-                        <div class="service-item" data-service="{{ $key }}">
+                    @foreach($services as $service )
+                        <div class="service-item" data-service="service-{{$service->id}}">
                             <div class="row service-title_wrap">
                                 <div class="col-md-12">
                                     <h2 class="section_title section_title__services-item makeup-title">{{ $service->getTranslate('title') }}</h2>
@@ -38,9 +38,9 @@
                     </div>
                 </div>
                 <div class="row page-content">
-                    @foreach($services as $key =>$service )
+                    @foreach($services as $service )
                         <div class="col-xs-12 col-sm-6 col-md-4">
-                            <a href="#" class="services_item" data-service-id="{{ $key }}">
+                            <a href="#" class="services_item services_item__click" data-service-id="service-{{$service->id}}">
                                 <img class="services_item__img" src="{{ asset( $service->getAttributeTranslate('Картинка послуги')) }}" alt="{{ $service->getTranslate('title') }}">
                                 <h4 class="services_item__title">{{ $service->getTranslate('title') }}</h4>
                                 <div class="services_item__description">{!! $service->getTranslate('short_description') !!}
