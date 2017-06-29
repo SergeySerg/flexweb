@@ -1272,9 +1272,6 @@ body {
   .slide_description-wrap {
     padding-left: 0;
     padding-right: 0; }
-  .slide-name {
-    font-size: 4.0625em;
-    line-height: 40px; }
   .slide_main-description {
     padding: 0 30px;
     font-size: 1.3125em; }
@@ -1379,8 +1376,9 @@ animation: none !important
   .section-slider {
     padding: 20px 10px; }
   .slide-name {
-    font-size: 50px;
-    padding-bottom: 20px; }
+    font-size: 32px;
+    padding-bottom: 20px;
+    line-height: 32px;}
   .slide_main-description {
     margin-bottom: 20px;
     padding: 0;
